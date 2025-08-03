@@ -432,7 +432,7 @@
                             Địa chỉ: Cầu Giấy – Hà Nội. <span style="color: red;"><strong>HOTLINE:
                                     033.875.2958</strong></span><br>
                             Website: <a href="https:htt-hanoi.edu.vn" target="_blank">https://htt-hanoi.edu.vn/</a> –
-                            Email: <a href="mailto:tuyensinh@htt.edu.vn">tuyensinh@htt.edu.vn</a></p>
+                            Email: <a href="mailto:caodangyduoc169@gmail.com">caodangyduoc169@gmail.com</a></p>
                     </div>
                 </section>
                 <section>
@@ -1137,7 +1137,7 @@
                 </div>
 
                 <!-- Google Map + Mạng xã hội -->
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <h6 class="fw-bold">HTT ON GOOGLE MAP</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
                     <div class="mb-3">
@@ -1145,15 +1145,15 @@
                             src="https://www.google.com/maps?q=Trường+Cao+Đẳng+Công+Nghệ+và+Thương+Mại+Hà+Nội&output=embed"
                             width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <!--<h6 class="fw-bold">KẾT NỐI VỚI NHÀ TRƯỜNG</h6>
+                    <h6 class="fw-bold">KẾT NỐI VỚI NHÀ TRƯỜNG</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
-                     <div class="d-flex gap-2">
+                    <div class="d-flex gap-2">
                         <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-messenger fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-tiktok fs-4"></i></a>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
 
             </div>
 
@@ -1166,19 +1166,19 @@
                     <h6 class="fw-bold">PHÒNG TUYỂN SINH</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
                     <p><i class="bi bi-telephone-fill"></i> Hotline: 033.875.2958</p>
-                    <p><i class="bi bi-envelope-fill"></i> Email: info@htt.edu.vn</p>
+                    <p><i class="bi bi-envelope-fill"></i> Email: caodangyduoc169@gmail.com</p>
                 </div>
                 <div class="col-md-4 mb-3">
                     <h6 class="fw-bold">PHÒNG ĐÀO TẠO</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
                     <p><i class="bi bi-telephone-fill"></i> Hotline: 033.875.2958</p>
-                    <p><i class="bi bi-envelope-fill"></i> Email: phongdaotao@htt.edu.vn</p>
+                    <p><i class="bi bi-envelope-fill"></i> Email: caodangyduoc169@gmail.com</p>
                 </div>
                 <div class="col-md-4 mb-3">
                     <h6 class="fw-bold">PHÒNG HÀNH CHÍNH – TỔNG HỢP</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
                     <p><i class="bi bi-telephone-fill"></i> Hotline: 033.875.2958</p>
-                    <p><i class="bi bi-envelope-fill"></i> Email: phongtochuc@htt.edu.vn</p>
+                    <p><i class="bi bi-envelope-fill"></i> Email: caodangyduoc169@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -1193,6 +1193,113 @@
         </div>
     </div>
 
+    <!-- Popup Form (Bootstrap Modal) -->
+    <!-- Modal -->
+    <!-- Popup Form (Bootstrap Modal) -->
+    <div class="modal fade" id="popupForm" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Giảm từ modal-xl xuống modal-lg -->
+            <div class="modal-content position-relative"> <!-- cần relative để đặt nút X -->
+
+                <!-- Nút X đóng -->
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+                    aria-label="Đóng"></button>
+
+                <div class="container-custom p-0 m-0">
+                    <!-- Left Panel with Image -->
+                    <div class="left-side"></div>
+
+                    <!-- Right Panel with Form -->
+                    <div class="right-side">
+                        <div class="form-title">ĐĂNG KÝ NGAY</div>
+                        <div class="form-desc">
+                            Thí sinh điền đầy đủ thông tin vào biểu mẫu dưới đây. Chúng tôi sẽ liên hệ với bạn trong
+                            vòng 01 ngày làm việc để xác nhận và hướng dẫn bạn hoàn thiện hồ sơ một cách thuận tiện
+                            nhất...
+                        </div>
+
+                        <form id="consultForm1">
+                            <input type="text" name="HoVaTen" class="form-control" placeholder="Nhập họ và tên*"
+                                required>
+                            <input type="tel" name="SoDt" class="form-control" placeholder="Số điện thoại" required>
+                            <small>Ngày sinh <span style="color: red;">*</span></small>
+                            <input type="date" name="NgaySinh" class="form-control" placeholder="Ngày sinh*" required>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="NguoiDangKy" class="form-select" required>
+                                        <option disabled selected>Bạn là</option>
+                                        <option value="hocsinh">Học sinh</option>
+                                        <option value="phuhuynh">Phụ huynh</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select name="HeTotNghiep" class="form-select" required>
+                                        <option disabled selected>Hệ tốt nghiệp</option>
+                                        <option value="thpt">THPT</option>
+                                        <option value="trungCap">Trung cấp</option>
+                                        <option value="caoDang">Cao Đẳng</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <input type="text" class="form-control" placeholder="Địa chỉ">
+                            <select name="NganhHoc" class="form-select" required>
+                                <option disabled selected>Chọn ngành học</option>
+                                <option value="oto">Công nghệ Ôtô</option>
+                                <option value="cntt">Công nghệ thông tin</option>
+                                <option value="thiet-ke">Thiết kế đồ họa</option>
+                                <option value="dien-cn">Điện công nghiệp</option>
+                                <option value="maylanh">Kỹ thuật máy lạnh</option>
+                                <option value="dien-dien-tu">Công nghệ Kỹ thuật Điện – Điện tử</option>
+                                <option value="tdh-cn">Tự động hóa công nghiệp</option>
+                                <option value="qtkd">Quản trị Kinh doanh</option>
+                                <option value="ketoan">Kế toán</option>
+                                <option value="tmđt">Thương mại điện tử</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="ks">Quản trị Khách sạn</option>
+                                <option value="bep">Kỹ thuật chế biến món ăn</option>
+                                <option value="hdl">Hướng dẫn du lịch</option>
+                                <option value="han">Ngôn ngữ Hàn</option>
+                                <option value="nhat">Ngôn ngữ Nhật</option>
+                                <option value="trung">Ngôn ngữ Trung</option>
+                                <option value="duoc">Dược sĩ</option>
+                                <option value="dieu-duong">Điều dưỡng</option>
+                                <option value="rang">Kỹ thuật phục hình răng</option>
+                                <option value="sac-dep">Chăm sóc sắc đẹp</option>
+                            </select>
+
+                            <button type="submit" class="btn btn-submit w-100">GỬI CHO CHÚNG TÔI</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Buttons -->
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons">
+        <!-- Zalo Button -->
+        <a href="https://zalo.me/0338752958" target="_blank" class="btn-zalo pulse" title="Chat Zalo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"
+                alt="Zalo">
+        </a>
+
+        <!-- Call Button -->
+        <a href="tel:0338752958" class="btn-call shake" title="Gọi ngay">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1206,7 +1313,32 @@
                 event.preventDefault();
                 const formData = new FormData(form);
 
-                fetch("https://formsubmit.co/ajax/ngkien2468@gmail.com", {
+                fetch("https://formsubmit.co/ajax/caodangyduoc169@gmail.com", {
+                    method: "POST",
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            form.reset();
+                            openPopup(); // Hiển thị popup
+                        } else {
+                            alert("❌ Submission failed. Please try again.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        alert("❌ There was an error. Please try again later.");
+                    });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("consultForm1");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+
+                fetch("https://formsubmit.co/ajax/caodangyduoc169@gmail.com", {
                     method: "POST",
                     body: formData
                 })
@@ -1231,7 +1363,7 @@
                 event.preventDefault();
                 const formData = new FormData(form);
 
-                fetch("https://formsubmit.co/ajax/ngkien2468@gmail.com", {
+                fetch("https://formsubmit.co/ajax/caodangyduoc169@gmail.com", {
                     method: "POST",
                     body: formData
                 })
@@ -1256,7 +1388,7 @@
                 event.preventDefault();
                 const formData = new FormData(form);
 
-                fetch("https://formsubmit.co/ajax/ngkien2468@gmail.com", {
+                fetch("https://formsubmit.co/ajax/caodangyduoc169@gmail.com", {
                     method: "POST",
                     body: formData
                 })
@@ -1291,6 +1423,15 @@
         }
 
     </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const popup = new bootstrap.Modal(document.getElementById('popupForm'));
+                popup.show();
+            }, 3000); // 3000ms = 3s
+        });
+    </script>
+
 </body>
 
 </html>
