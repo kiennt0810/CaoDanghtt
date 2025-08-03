@@ -511,3 +511,136 @@ footer {
       transform: translateY(0);
   }
 }
+
+.container-custom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.left-side {
+  flex: 1;
+  background: url('img/ttts/leftSide.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 650px;
+}
+
+.right-side {
+  flex: 1;
+  padding: 30px 25px;
+  background-color: #fff;
+  max-width: 500px; /* thêm giới hạn chiều rộng form */
+  margin: auto;
+}
+
+.form-title {
+  color: #00b140;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-desc {
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-control,
+.form-select {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  height: 45px;
+}
+
+.btn-submit {
+  background-color: #ffaa00;
+  color: white;
+  font-weight: 600;
+  border: none;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.btn-submit:hover {
+  background-color: #ff8800;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+/* Vị trí cố định */
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.floating-buttons a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-zalo {
+  background-color: #0084ff;
+}
+
+.btn-zalo img {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-call {
+  background-color: #e53935;
+  color: white;
+  font-size: 26px;
+}
+
+/* Animation: nhịp đập cho Zalo */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Animation: lắc cho Call */
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-15deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+}
+
+.shake {
+  animation: shake 1.5s infinite;
+}
