@@ -23,29 +23,6 @@
                     <img src="img/ttts/logo.png" alt="HTT Logo" height="60">
                 </a>
             </div>
-
-            <!-- Contact and Social (ẩn trên mobile) -->
-            <div class="col text-center text-md-end d-none d-lg-flex pe-3">
-                <div class="d-flex flex-row align-items-center ms-auto gap-2">
-                    <!-- Hotline -->
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-telephone-fill me-1 text-primary"></i>
-                        <span><strong>Hotline:</strong> 033 8752958</span>
-                    </div>
-
-                    <!-- Website Button -->
-                    <a href="https://htt-hanoi.edu.vn/" class="btn btn-outline-primary btn-sm">htt-hanoi.edu.vn</a>
-
-                    <!-- Social Icons -->
-                    <div class="d-flex align-items-center gap-2">
-                        <a href="#"><i class="bi bi-facebook fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-instagram fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-tiktok fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-envelope fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-youtube fs-5 text-primary"></i></a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -62,56 +39,38 @@
                         <a class="nav-link text-white" href="#">TRANG CHỦ</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-white dropdown-toggle" href="#">GIỚI THIỆU</a>
-                        <ul class="dropdown-menu custom-dropdown">
-                            <li><a class="dropdown-item" href="#">Về Trường</a></li>
-                            <li><a class="dropdown-item" href="#">Sứ Mệnh</a></li>
-                        </ul>
+                        <a class="nav-link text-white" href="#">GIỚI THIỆU</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-white dropdown-toggle" href="#ThongBaoTuyenSinh">TUYỂN SINH</a>
-                        <ul class="dropdown-menu custom-dropdown">
-                            <li><a class="dropdown-item" href="#">Thông Tin Tuyển Sinh</a></li>
-                            <li><a class="dropdown-item" href="#">Học Phí</a></li>
-                        </ul>
+                        <a class="nav-link text-white" href="#ThongBaoTuyenSinh">TUYỂN SINH</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-white dropdown-toggle" href="#">CHUYÊN NGÀNH ĐÀO TẠO</a>
-                        <ul class="dropdown-menu custom-dropdown">
-                            <li><a class="dropdown-item" href="#">KHỐI CÔNG NGHỆ & KỸ THUẬT</a></li>
-                            <li><a class="dropdown-item" href="#">KHỐI KINH TẾ</a></li>
-                            <li><a class="dropdown-item" href="#">KHỐI DU LỊCH</a></li>
-                            <li><a class="dropdown-item" href="#">KHỐI NGÔN NGỮ</a></li>
-                            <li><a class="dropdown-item" href="#">KHỐI CHĂM SÓC SỨC KHỎE</a></li>
-                        </ul>
+                        <a class="nav-link text-white" href="#NganhTuyenSinh">CHUYÊN NGÀNH ĐÀO TẠO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#consultForm">LIÊN HỆ</a>
                     </li>
                 </ul>
                 <!-- Search -->
-                <form class="search-form">
+
+                <!-- <form class="search-form">
                     <input class="form-control" type="search" placeholder="Tìm kiếm" aria-label="Search">
                     <button class="btn">
                         <i class="bi bi-search"></i>
                     </button>
-                </form>
+                </form> -->
                 <!-- Contact and Social (hiện trong menu mobile) -->
-                <div class="d-lg-none mt-3">
+                <!-- <div class="d-lg-none mt-3">
                     <div class="mb-2">
                         <i class="bi bi-telephone-fill me-1 text-primary"></i>
                         <span><strong>Hotline:</strong> 033.875.2958</span>
                     </div>
-                    <div class="mb-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm w-100">www.htt.edu.vn</a>
-                    </div>
-                    <div class="d-flex gap-2 justify-content-center">
-                        <a href="#"><i class="bi bi-facebook fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-instagram fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-tiktok fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-envelope fs-5 text-primary"></i></a>
-                        <a href="#"><i class="bi bi-youtube fs-5 text-primary"></i></a>
-                    </div>
+                </div> -->
+            </div>
+            <div class="mt-3">
+                <div class="mb-2">
+                    <i class="bi bi-telephone-fill me-1 text-primary"></i>
+                    <span style="color: white;"><strong>Hotline:</strong> 033.875.2958</span>
                 </div>
             </div>
         </div>
@@ -284,7 +243,7 @@
                         </tbody>
                     </table>
                 </div>
-                <section style="padding-bottom: 20px; font-family: Arial, sans-serif;">
+                <section style="padding-bottom: 20px;">
                     <div style="max-width: 1200px; margin: auto;">
                         <div style="margin-bottom: 30px;">
                             <p style="line-height: 1.6;">
@@ -540,7 +499,7 @@
                     </section>
                 </section>
                 <br>
-                <section>
+                <section id="NganhTuyenSinh">
                     <h2><i class="bi bi-file-earmark-text" style="color: #178040;"></i> Các Ngành <span
                             class="text-success">Đang Tuyển Sinh</span></h2>
                     <hr>
@@ -551,16 +510,16 @@
                         <!-- Slide 1 -->
                         <div class="carousel-item active">
                             <div class="d-flex justify-content-center">
-                                <div class="card" style="width: 100%; max-width: 350px;">
-                                    <img src="img/ttts/khoi-y-duoc-thmb.jpg" class="card-img-top"
-                                        alt="Khối Chăm Sóc Sức Khỏe">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <a href="#" class="btn btn-success me-2">Đăng ký</a>
-                                            <a href="#" class="btn btn-outline-success">Xem chi tiết</a>
+                                <div class="card" style="width: 100%; max-width: 300px; height: 500px;">
+                                    <img src="img/ttts/khoi-y-duoc-thmb.jpg" class="card-img-top" alt="Khối Du Lịch">
+                                    <div class="card-body text-center">
+                                        <div class="btn-group-custom mb-3">
+                                            <a href="#consultForm" class="btn btn-success btn-square">Đăng ký</a>
+                                            <a href="#consultForm" class="btn btn-outline-success btn-square">Xem chi
+                                                tiết</a>
                                         </div>
-                                        <h5><strong>Khối Chăm Sóc Sức Khỏe</strong></h5>
-                                        <ul>
+                                        <h5><strong>Khối Chăm Sóc - Sức Khỏe</strong></h5>
+                                        <ul class="text-start">
                                             <li>Điều dưỡng</li>
                                             <li>Dược</li>
                                             <li>Y sĩ đa khoa</li>
@@ -573,40 +532,93 @@
                         <!-- Slide 2 -->
                         <div class="carousel-item">
                             <div class="d-flex justify-content-center">
-                                <div class="card" style="width: 100%; max-width: 350px;">
-                                    <img src="img/ttts/cong-nghe-htt.jpg" class="card-img-top"
-                                        alt="Khối Công Nghệ – Kỹ Thuật">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <a href="#" class="btn btn-success me-2">Đăng ký</a>
-                                            <a href="#" class="btn btn-outline-success">Xem chi tiết</a>
+                                <div class="card" style="width: 100%; max-width: 300px; height: 500px;">
+                                    <img src="img/ttts/cong-nghe-htt.jpg" class="card-img-top" alt="Khối Du Lịch">
+                                    <div class="card-body text-center">
+                                        <div class="btn-group-custom mb-3">
+                                            <a href="#consultForm" class="btn btn-success btn-square">Đăng ký</a>
+                                            <a href="#consultForm" class="btn btn-outline-success btn-square">Xem chi
+                                                tiết</a>
                                         </div>
-                                        <h5><strong>Khối Công Nghệ – Kỹ Thuật</strong></h5>
-                                        <ul>
-                                            <li>CNTT</li>
-                                            <li>Ô tô</li>
-                                            <li>Thiết kế</li>
+                                        <h5><strong>Khối Công Nghệ - Kỹ Thuật</strong></h5>
+                                        <ul class="text-start">
+                                            <li>Công nghệ kỹ thuật - điện tử</li>
+                                            <li>Công nghệ Ô tô</li>
+                                            <li>Công nghệ thông tin</li>
+                                            <li>Điện công nghệ</li>
+                                            <li>Thiết kế đồ họa</li>
+                                            <li>Tự động hóa công nghiệp</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+
                         <!-- Slide 3 -->
                         <div class="carousel-item">
                             <div class="d-flex justify-content-center">
-                                <div class="card" style="width: 100%; max-width: 350px;">
+                                <div class="card" style="width: 100%; max-width: 300px; height: 500px;">
                                     <img src="img/ttts/du-lich-htt.jpg" class="card-img-top" alt="Khối Du Lịch">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <a href="#" class="btn btn-success me-2">Đăng ký</a>
-                                            <a href="#" class="btn btn-outline-success">Xem chi tiết</a>
+                                    <div class="card-body text-center">
+                                        <div class="btn-group-custom mb-3">
+                                            <a href="#consultForm" class="btn btn-success btn-square">Đăng ký</a>
+                                            <a href="#consultForm" class="btn btn-outline-success btn-square">Xem chi
+                                                tiết</a>
                                         </div>
                                         <h5><strong>Khối Du Lịch</strong></h5>
-                                        <ul>
-                                            <li>Hướng dẫn</li>
-                                            <li>Món ăn</li>
-                                            <li>Khách sạn</li>
+                                        <ul class="text-start">
+                                            <li>Hướng dẫn du lịch</li>
+                                            <li>Kỹ thuật chế biến Món ăn</li>
+                                            <li>Quản trị khách sạn</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card" style="width: 100%; max-width: 300px; height: 500px;">
+                                    <img src="img/ttts/ngon-ngu-htt.jpg" class="card-img-top" alt="Khối Du Lịch">
+                                    <div class="card-body text-center">
+                                        <div class="btn-group-custom mb-3">
+                                            <a href="#consultForm" class="btn btn-success btn-square">Đăng ký</a>
+                                            <a href="#consultForm" class="btn btn-outline-success btn-square">Xem chi
+                                                tiết</a>
+                                        </div>
+                                        <h5><strong>Khối Ngôn Ngữ</strong></h5>
+                                        <ul class="text-start">
+                                            <li>Tiếng Anh</li>
+                                            <li>Tiếng Hàn</li>
+                                            <li>Tiếng Nhật</li>
+                                            <li>Tiếng Trung</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card" style="width: 100%; max-width: 300px; height: 500px;">
+                                    <img src="img/ttts/du-lich-htt.jpg" class="card-img-top" alt="Khối Du Lịch">
+                                    <div class="card-body text-center">
+                                        <div class="btn-group-custom mb-3">
+                                            <a href="#consultForm" class="btn btn-success btn-square">Đăng ký</a>
+                                            <a href="#consultForm" class="btn btn-outline-success btn-square">Xem chi
+                                                tiết</a>
+                                        </div>
+                                        <h5><strong>Khối Kinh Tế</strong></h5>
+                                        <ul class="text-start">
+                                            <li>Kế Toán</li>
+                                            <li>Logistics</li>
+                                            <li>Marketing</li>
+                                            <li>Quản trị - Kinh doanh</li>
+                                            <li>Tài chính - Ngân hàng</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -637,13 +649,13 @@
             <!-- Sidebar -->
             <div class="col-lg-3 sidebar">
                 <div class="list-group mb-4">
-                    <a href="#" class="list-group-item">
+                    <a href="#consultForm" class="list-group-item">
                         <i class="bi bi-person-lines-fill me-2"></i> Tư vấn ngành nghề
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a href="#consultForm" class="list-group-item">
                         <i class="bi bi-journal-check me-2"></i> Quy trình nhập học
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a href="#CauHoi" class="list-group-item">
                         <i class="bi bi-question-circle me-2"></i> Câu hỏi thường gặp
                     </a>
                 </div>
@@ -750,7 +762,7 @@
     </div>
     <div class="container-fluid my-5">
         <section class="faq-section py-5" style="background-color: #f8f9fa;">
-            <div class="container">
+            <div class="container" id="CauHoi">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold">NHỮNG CÂU HỎI <span class="text-success">THƯỜNG GẶP</span></h2>
                     <hr class="mx-auto" style="width: 80px; border-top: 3px solid orange;">
@@ -1133,14 +1145,14 @@
                             src="https://www.google.com/maps?q=Trường+Cao+Đẳng+Công+Nghệ+và+Thương+Mại+Hà+Nội&output=embed"
                             width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    <h6 class="fw-bold">KẾT NỐI VỚI NHÀ TRƯỜNG</h6>
+                    <!--<h6 class="fw-bold">KẾT NỐI VỚI NHÀ TRƯỜNG</h6>
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
-                    <div class="d-flex gap-2">
+                     <div class="d-flex gap-2">
                         <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-messenger fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
                         <a href="#" class="text-white"><i class="bi bi-tiktok fs-4"></i></a>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
