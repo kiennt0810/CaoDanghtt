@@ -621,6 +621,12 @@ footer {
   font-size: 26px;
 }
 
+.btn-gift {
+  background-color: #218838;
+  color: white;
+  font-size: 26px;
+}
+
 /* Animation: nhịp đập cho Zalo */
 @keyframes pulse {
   0% { transform: scale(1); }
