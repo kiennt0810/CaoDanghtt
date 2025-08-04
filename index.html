@@ -430,7 +430,7 @@
                         <p><strong>Phòng Tuyển sinh – Trường Cao đẳng Công nghệ và Thương mại Hà Nội</strong><br>
                             Địa chỉ: Cầu Giấy – Hà Nội. <span style="color: red;"><strong>HOTLINE:
                                     033.875.2958</strong></span><br>
-                            Website: <a href="https:htt-hanoi.edu.vn" target="_blank">https://htt-hanoi.edu.vn/</a> –
+                            Website: <a href="https://htt-edu.com/" target="_blank">https://htt-edu.com/</a> –
                             Email: <a href="mailto:caodangyduoc169@gmail.com">caodangyduoc169@gmail.com</a></p>
                     </div>
                 </section>
@@ -449,16 +449,19 @@
                     <section>
                         <form id="consultForm2"
                             style="background-color: #3b7f3b; padding: 20px; display: flex; flex-wrap: wrap; gap: 10px;">
-                            <input type="text" name="HoVaTen" placeholder="Họ và tên" required
+                            <input type="text" name="HoVaTen" placeholder="Họ và tên*" required
                                 style="flex: 1 1 30%; padding: 10px;">
-                            <input type="date" name="NgaySinh" placeholder="Ngày sinh" required
-                                style="flex: 1 1 30%; padding: 10px;">
-                            <input type="tel" name="SoDt" placeholder="Số điện thoại" required
-                                style="flex: 1 1 30%; padding: 10px;">
-                            <input type="text" name="DiaChi" placeholder="Địa chỉ"
-                                style="flex: 1 1 30%; padding: 10px;">
-                            <input type="text" name="TruongThpt" placeholder="Trường THPT"
-                                style="flex: 1 1 30%; padding: 10px;">
+                            <div style="flex: 1 1 30%; display: flex; align-items: center; gap: 5px;">
+                                <small style="color: white;">Ngày sinh <span style="color: red;">*</span></small>
+                                <input type="date" name="NgaySinh" required
+                                    style="flex: 1; padding: 10px; box-sizing: border-box;">
+                            </div>
+                            <input type="tel" name="SoDt" placeholder="Số điện thoại*" required
+                                style="flex: 1 1 30%; padding: 10px;" required>
+                            <input type="text" name="DiaChi" placeholder="Địa chỉ*"
+                                style="flex: 1 1 30%; padding: 10px;" required>
+                            <input type="text" name="TruongThpt" placeholder="Trường THPT*"
+                                style="flex: 1 1 30%; padding: 10px;" required>
                             <select name="PhuongThuc" required style="flex: 1 1 30%; padding: 10px;">
                                 <option value="">Phương thức xét tuyển</option>
                                 <option value="hocba">Xét tuyển học bạ</option>
@@ -713,11 +716,12 @@
                         <form id="consultForm">
                             <div class="form-container">
                                 <h2>FORM ĐĂNG KÝ HỌC</h2>
-                                <input type="text" name="HoVaTen" placeholder="Họ và tên" required />
-                                <input type="date" name="NgaySinh" placeholder="Ngày sinh" required />
-                                <input type="tel" name="SoDt" placeholder="Số điện thoại" required />
-                                <input type="text" name="DiaChi" placeholder="Địa chỉ" required />
-                                <input type="text" name="TruongThpt" placeholder="Trường THPT" required />
+                                <input type="text" name="HoVaTen" placeholder="Họ và tên*" required />
+                                <small style="color: white;">Ngày sinh <span style="color: red;">*</span></small>
+                                <input type="date" name="NgaySinh" placeholder="Ngày sinh*" required />
+                                <input type="tel" name="SoDt" placeholder="Số điện thoại*" required />
+                                <input type="text" name="DiaChi" placeholder="Địa chỉ*" required />
+                                <input type="text" name="TruongThpt" placeholder="Trường THPT*" required />
 
                                 <select name="PhuongThuc" required>
                                     <option value="">Phương thức xét tuyển</option>
@@ -1123,15 +1127,15 @@
                     <hr class="mb-2" style="width: 40px; border-color: orange;">
                     <form id="consultForm3">
                         <div class="mb-2">
-                            <input type="text" name="HoVaTen" class="form-control" placeholder="Họ và tên">
+                            <input type="text" name="HoVaTen" class="form-control" placeholder="Họ và tên*" required>
                         </div>
                         <div class="mb-2">
                             <input type="text" name="SoDt" class="form-control"
-                                placeholder="Nhập SĐT để nhận tư vấn miễn phí">
+                                placeholder="Nhập SĐT để nhận tư vấn miễn phí*" required>
                         </div>
                         <div class="mb-2">
                             <input type="text" name="VanDeCanTuVan" class="form-control"
-                                placeholder="Vấn đề cần tư vấn">
+                                placeholder="Vấn đề cần tư vấn*" required>
                         </div>
                         <button type="submit" class="btn btn-warning w-100 fw-bold">GỬI</button>
                     </form>
@@ -1221,7 +1225,7 @@
                         <form id="consultForm1">
                             <input type="text" name="HoVaTen" class="form-control" placeholder="Nhập họ và tên*"
                                 required>
-                            <input type="tel" name="SoDt" class="form-control" placeholder="Số điện thoại" required>
+                            <input type="tel" name="SoDt" class="form-control" placeholder="Số điện thoại*" required>
                             <small>Ngày sinh <span style="color: red;">*</span></small>
                             <input type="date" name="NgaySinh" class="form-control" placeholder="Ngày sinh*" required>
                             <select name="HeTotNghiep" class="form-select" required>
@@ -1231,7 +1235,7 @@
                                 <option value="caoDang">Cao Đẳng</option>
                             </select>
 
-                            <input type="text" name="DiaChi" class="form-control" placeholder="Địa chỉ">
+                            <input type="text" name="DiaChi" class="form-control" placeholder="Địa chỉ*" required>
                             <select name="NganhHoc" class="form-select" required>
                                 <option disabled selected>Chọn ngành học</option>
                                 <option value="cong-nghe-oto">Công nghệ Ôtô</option>
