@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="Tuyển sinh Cao đẳng Chính quy 2025 - HTT College">
+    <meta property="og:description"
+        content="Trường Cao đẳng HTT thông báo tuyển sinh chính quy năm 2025. Đăng ký ngay để nhận ưu đãi học phí!">
+    <meta property="og:image" content="https://htt-edu.com/img/ttts/banner.jpeg">
+    <meta property="og:url" content="https://htt-edu.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HTT College">
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -479,13 +486,13 @@
                                 style="flex: 1 1 30%; padding: 10px;" required>
                             <input type="text" name="DiaChi" placeholder="Địa chỉ*"
                                 style="flex: 1 1 30%; padding: 10px;" required>
-                            <input type="text" name="TruongThpt" placeholder="Trường THPT*"
+                            <!-- <input type="text" name="TruongThpt" placeholder="Trường THPT*"
                                 style="flex: 1 1 30%; padding: 10px;" required>
                             <select name="PhuongThuc" required style="flex: 1 1 30%; padding: 10px;">
                                 <option value="">Phương thức xét tuyển</option>
                                 <option value="hocba">Xét tuyển học bạ</option>
                                 <option value="diemthi">Xét điểm thi tốt nghiệp</option>
-                            </select>
+                            </select> -->
                             <select name="NganhHoc" required style="flex: 1 1 30%; padding: 10px;">
                                 <option value="">Đăng ký ngành học</option>
                                 <option value="cong-nghe-oto">Công nghệ Ôtô</option>
@@ -740,13 +747,13 @@
                                 <input type="date" name="NgaySinh" placeholder="Ngày sinh*" required />
                                 <input type="tel" name="SoDt" placeholder="Số điện thoại*" required />
                                 <input type="text" name="DiaChi" placeholder="Địa chỉ*" required />
-                                <input type="text" name="TruongThpt" placeholder="Trường THPT*" required />
+                                <!-- <input type="text" name="TruongThpt" placeholder="Trường THPT*" required />
 
                                 <select name="PhuongThuc" required>
                                     <option value="">Phương thức xét tuyển</option>
                                     <option value="hocba">Xét học bạ</option>
                                     <option value="thituyen">Thi tuyển</option>
-                                </select>
+                                </select> -->
 
                                 <select name="NganhHoc" required>
                                     <option value="">Đăng ký ngành học</option>
@@ -1149,12 +1156,43 @@
                             <input type="text" name="HoVaTen" class="form-control" placeholder="Họ và tên*" required>
                         </div>
                         <div class="mb-2">
+                            <small style="color: white;">Ngày sinh <span style="color: red;">*</span></small>
+                            <input type="date" name="NgaySinh" class="form-control" placeholder="Ngày sinh*" required />
+                        </div>
+                        <div class="mb-2">
                             <input type="text" name="SoDt" class="form-control"
                                 placeholder="Nhập SĐT để nhận tư vấn miễn phí*" required>
                         </div>
                         <div class="mb-2">
-                            <input type="text" name="VanDeCanTuVan" class="form-control"
-                                placeholder="Vấn đề cần tư vấn*" required>
+                            <input type="text" name="DiaChi" class="form-control" placeholder="Địa chỉ*" required>
+                        </div>
+                        <div class="mb-2">
+                            <select name="NganhHoc" class="form-select" required>
+                                <option disabled selected>Chọn ngành học</option>
+                                <option value="cong-nghe-oto">Công nghệ Ôtô</option>
+                                <option value="cntt">Công nghệ thông tin</option>
+                                <option value="thiet-ke-do-hoa">Thiết kế đồ họa</option>
+                                <option value="dien-cong-nghiep">Điện công nghiệp</option>
+                                <option value="ky-thuat-may-lanh">Kỹ thuật máy lạnh</option>
+                                <option value="cong-nghe-ky-thuat-dien-dien-tu">Công nghệ Kỹ thuật Điện – Điện tử
+                                </option>
+                                <option value="tu-dong-hoa-cong-nghiep">Tự động hóa công nghiệp</option>
+                                <option value="quan-tri-kinh-doanh">Quản trị Kinh doanh</option>
+                                <option value="ke-toan">Kế toán</option>
+                                <option value="thuong-mai-dien-tu">Thương mại điện tử</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="quan-tri-khach-san">Quản trị Khách sạn</option>
+                                <option value="ky-thuat-che-bien-mon-an">Kỹ thuật chế biến món ăn</option>
+                                <option value="huong-dan-du-lich">Hướng dẫn du lịch</option>
+                                <option value="ngon-ngu-han">Ngôn ngữ Hàn</option>
+                                <option value="ngon-ngu-nhat">Ngôn ngữ Nhật</option>
+                                <option value="ngon-ngu-trung">Ngôn ngữ Trung</option>
+                                <option value="duoc-si">Dược sĩ</option>
+                                <option value="dieu-duong">Điều dưỡng</option>
+                                <option value="ky-thuat-phuc-hinh-rang">Kỹ thuật phục hình răng</option>
+                                <option value="cham-soc-sac-dep">Chăm sóc sắc đẹp</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-warning w-100 fw-bold">GỬI</button>
                     </form>
@@ -1247,12 +1285,12 @@
                             <input type="tel" name="SoDt" class="form-control" placeholder="Số điện thoại*" required>
                             <small>Ngày sinh <span style="color: red;">*</span></small>
                             <input type="date" name="NgaySinh" class="form-control" placeholder="Ngày sinh*" required>
-                            <select name="HeTotNghiep" class="form-select" required>
+                            <!-- <select name="HeTotNghiep" class="form-select" required>
                                 <option disabled selected>Hệ tốt nghiệp</option>
                                 <option value="thpt">THPT</option>
                                 <option value="trungCap">Trung cấp</option>
                                 <option value="caoDang">Cao Đẳng</option>
-                            </select>
+                            </select> -->
 
                             <input type="text" name="DiaChi" class="form-control" placeholder="Địa chỉ*" required>
                             <select name="NganhHoc" class="form-select" required>
