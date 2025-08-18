@@ -1619,81 +1619,148 @@
     <script>
         // Hàm trích xuất UTM parameters và thông tin tracking
         function getTrackingData() {
-            const urlParams = new URLSearchParams(window.location.search);
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
 
-            // Lấy UTM parameters
-            const utmData = {
-                utm_source: urlParams.get('utm_source') || '',
-                utm_medium: urlParams.get('utm_medium') || '',
-                utm_campaign: urlParams.get('utm_campaign') || '',
-                utm_term: urlParams.get('utm_term') || '',
-                utm_content: urlParams.get('utm_content') || '',
-                utm_id: urlParams.get('utm_id') || '',
-                gclid: urlParams.get('gclid') || '', // Google Ads Click ID
-                fbclid: urlParams.get('fbclid') || '', // Facebook Click ID
-                msclkid: urlParams.get('msclkid') || '', // Microsoft Ads Click ID
-                ttclid: urlParams.get('ttclid') || '', // TikTok Click ID
-            };
+                // Lấy UTM parameters từ URL hiện tại
+                const currentUtmData = {
+                    utm_source: urlParams.get('utm_source') || '',
+                    utm_medium: urlParams.get('utm_medium') || '',
+                    utm_campaign: urlParams.get('utm_campaign') || '',
+                    utm_term: urlParams.get('utm_term') || '',
+                    utm_content: urlParams.get('utm_content') || '',
+                    utm_id: urlParams.get('utm_id') || '',
+                    gclid: urlParams.get('gclid') || '',
+                    fbclid: urlParams.get('fbclid') || '',
+                    msclkid: urlParams.get('msclkid') || '',
+                    ttclid: urlParams.get('ttclid') || ''
+                };
 
-            // Thông tin bổ sung
-            const additionalData = {
-                referrer: document.referrer || 'Direct',
-                user_agent: navigator.userAgent || '',
-                screen_resolution: `${screen.width}x${screen.height}`,
-                viewport_size: `${window.innerWidth}x${window.innerHeight}`,
-                device_type: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-                browser_language: navigator.language || '',
-                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
-                landing_page: window.location.href,
-                current_url: window.location.href,
-                page_title: document.title || ''
-            };
+                // Lưu UTM vào sessionStorage nếu có UTM parameters
+                if (currentUtmData.utm_source || currentUtmData.utm_medium || currentUtmData.utm_campaign ||
+                    currentUtmData.gclid || currentUtmData.fbclid) {
+                    sessionStorage.setItem('utm_data', JSON.stringify(currentUtmData));
+                    sessionStorage.setItem('landing_page', window.location.href);
+                    console.log('💾 UTM Data saved to session:', currentUtmData);
+                }
 
-            // Lưu UTM vào sessionStorage để theo dõi trong suốt session
-            if (utmData.utm_source || utmData.utm_medium || utmData.utm_campaign) {
-                sessionStorage.setItem('utm_data', JSON.stringify(utmData));
-                sessionStorage.setItem('landing_page', window.location.href);
-            }
+                // Lấy UTM từ sessionStorage (ưu tiên session data)
+                let utmData = currentUtmData;
+                const savedUtmData = sessionStorage.getItem('utm_data');
 
-            // Lấy UTM từ sessionStorage nếu có (cho các page khác trong session)
-            const savedUtmData = sessionStorage.getItem('utm_data');
-            const savedLandingPage = sessionStorage.getItem('landing_page');
-
-            if (savedUtmData) {
-                const parsedUtmData = JSON.parse(savedUtmData);
-                Object.keys(parsedUtmData).forEach(key => {
-                    if (!utmData[key] && parsedUtmData[key]) {
-                        utmData[key] = parsedUtmData[key];
+                if (savedUtmData) {
+                    try {
+                        const parsedUtmData = JSON.parse(savedUtmData);
+                        // Sử dụng saved data nếu current URL không có UTM
+                        Object.keys(parsedUtmData).forEach(key => {
+                            if (!utmData[key] && parsedUtmData[key]) {
+                                utmData[key] = parsedUtmData[key];
+                            }
+                        });
+                        console.log('📥 Using saved UTM data:', parsedUtmData);
+                    } catch (e) {
+                        console.error('Error parsing saved UTM data:', e);
                     }
-                });
+                }
+
+                // Thông tin bổ sung
+                const additionalData = {
+                    referrer: document.referrer || 'Direct',
+                    user_agent: navigator.userAgent || '',
+                    screen_resolution: `${screen.width}x${screen.height}`,
+                    viewport_size: `${window.innerWidth}x${window.innerHeight}`,
+                    device_type: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+                    browser_language: navigator.language || '',
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+                    landing_page: sessionStorage.getItem('landing_page') || window.location.href,
+                    current_url: window.location.href,
+                    page_title: document.title || '',
+                    timestamp: new Date().toISOString()
+                };
+
+                const finalData = { ...utmData, ...additionalData };
+
+                // Enhanced debug logging
+                console.log('🔍 Current URL:', window.location.href);
+                console.log('🔍 URL Parameters:', window.location.search);
+                console.log('🔍 Final Tracking Data:', finalData);
+
+                // Hiển thị UTM nếu có
+                if (utmData.utm_source || utmData.utm_campaign || utmData.gclid || utmData.fbclid) {
+                    console.log('🎯 UTM/Click ID Detected:', {
+                        source: utmData.utm_source,
+                        medium: utmData.utm_medium,
+                        campaign: utmData.utm_campaign,
+                        gclid: utmData.gclid,
+                        fbclid: utmData.fbclid
+                    });
+                } else {
+                    console.log('ℹ️ No UTM parameters found in URL or session');
+                }
+
+                return finalData;
+
+            } catch (error) {
+                console.error('❌ Error in getTrackingData:', error);
+                return {
+                    utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: '', utm_id: '',
+                    gclid: '', fbclid: '', msclkid: '', ttclid: '',
+                    referrer: document.referrer || 'Direct',
+                    device_type: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+                    current_url: window.location.href,
+                    timestamp: new Date().toISOString()
+                };
             }
-
-            if (savedLandingPage && !utmData.utm_source) {
-                additionalData.landing_page = savedLandingPage;
-            }
-
-            // Debug logging
-            console.log('🔍 UTM Tracking Data:', { ...utmData, ...additionalData });
-
-            return { ...utmData, ...additionalData };
         }
+
+        // Test function để kiểm tra UTM tracking
+        window.testUTMTracking = function () {
+            console.log('🧪 Testing UTM Tracking...');
+            const trackingData = getTrackingData();
+            console.table(trackingData);
+            return trackingData;
+        };
 
         // Tự động hiển thị UTM data khi trang load
         window.addEventListener('load', function () {
+            console.log('🚀 Page loaded, initializing UTM tracking...');
             const trackingData = getTrackingData();
             console.log('📊 Page Load - Full Tracking Data:', trackingData);
 
             // Hiển thị UTM parameters trên trang (chỉ để test)
-            if (trackingData.utm_source || trackingData.utm_campaign) {
-                console.log('🎯 UTM Campaign Detected:', {
+            if (trackingData.utm_source || trackingData.utm_campaign || trackingData.gclid || trackingData.fbclid) {
+                console.log('🎯 UTM/Campaign Detected:', {
                     source: trackingData.utm_source,
                     medium: trackingData.utm_medium,
                     campaign: trackingData.utm_campaign,
                     term: trackingData.utm_term,
-                    content: trackingData.utm_content
+                    content: trackingData.utm_content,
+                    gclid: trackingData.gclid,
+                    fbclid: trackingData.fbclid
                 });
+
+                // Hiển thị thông báo trên trang nếu có UTM
+                if (typeof trackingData.utm_source === 'string' && trackingData.utm_source.length > 0) {
+                    console.log('✅ UTM Source detected: ' + trackingData.utm_source);
+                }
+            } else {
+                console.log('ℹ️ No UTM parameters detected on page load');
             }
+
+            // Thông báo cách test
+            console.log('💡 To test UTM tracking, try: window.testUTMTracking()');
+            console.log('💡 Or visit with UTM: ?utm_source=test&utm_campaign=debug');
+            console.log('💡 Current URL for reference:', window.location.href);
         });
+
+        // Auto-test với URL có UTM parameters
+        if (window.location.search.includes('utm_') || window.location.search.includes('gclid') || window.location.search.includes('fbclid')) {
+            console.log('🔍 UTM parameters detected in URL, running auto-test...');
+            setTimeout(() => {
+                const data = getTrackingData();
+                console.log('🧪 Auto-test results:', data);
+            }, 1000);
+        }
 
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("consultForm1");
@@ -1751,6 +1818,8 @@
                         Timezone: trackingData.timezone
                     }
                 };
+
+                console.log('📤 Sending form data with UTM tracking:', jsonData);
 
                 fetch("https://sheetdb.io/api/v1/z9ypl31kjriwv", {
                     method: "POST",
@@ -1819,7 +1888,23 @@
                         TruongThpt: '',
                         PhuongThuc: '',
                         VanDeCanTuVan: '',
-                        FullUrl: window.location.href
+                        FullUrl: window.location.href,
+                        UTM_Source: trackingData.utm_source,
+                        UTM_Medium: trackingData.utm_medium,
+                        UTM_Campaign: trackingData.utm_campaign,
+                        UTM_Term: trackingData.utm_term,
+                        UTM_Content: trackingData.utm_content,
+                        UTM_ID: trackingData.utm_id,
+                        // Click IDs
+                        Google_Click_ID: trackingData.gclid,
+                        Facebook_Click_ID: trackingData.fbclid,
+                        Microsoft_Click_ID: trackingData.msclkid,
+                        TikTok_Click_ID: trackingData.ttclid,
+                        // Additional Tracking Data
+                        Device_Type: trackingData.device_type,
+                        Screen_Resolution: trackingData.screen_resolution,
+                        Browser_Language: trackingData.browser_language,
+                        Timezone: trackingData.timezone
                     }
                 };
 
@@ -1912,6 +1997,8 @@
                     }
                 };
 
+                console.log('📤 Sending form data with UTM tracking:', jsonData);
+
                 fetch("https://sheetdb.io/api/v1/z9ypl31kjriwv", {
                     method: "POST",
                     headers: {
@@ -2000,6 +2087,8 @@
                         Timezone: trackingData.timezone
                     }
                 };
+
+                console.log('📤 Sending form data with UTM tracking:', jsonData);
 
                 fetch("https://sheetdb.io/api/v1/z9ypl31kjriwv", {
                     method: "POST",
